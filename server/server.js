@@ -10,7 +10,7 @@ const app = express();
 const corsOptions = {
   origin: [
     process.env.HOST,
-    "http://localhost:5173/",
+    "http://localhost:5173",
   ],
   methods: 'GET',
   credentials: true,
