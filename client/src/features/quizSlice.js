@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/quiz';
+
 export const fetchQuestions = createAsyncThunk(
   'quiz/fetchQuestions',
   async (quizSettings, thunkAPI) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/questions', quizSettings);
+      const response = await axios.post(BASE_URL, quizSettings);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
