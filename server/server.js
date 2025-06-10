@@ -7,7 +7,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    process.env.HOST,
+  ],
+  methods: 'GET',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 
