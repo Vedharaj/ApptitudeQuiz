@@ -12,7 +12,7 @@ const corsOptions = {
     process.env.HOST,
     "http://localhost:5173",
   ],
-  methods: 'GET',
+  methods: 'GET, POST',
   credentials: true,
   optionsSuccessStatus: 204
 };
